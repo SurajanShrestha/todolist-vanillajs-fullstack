@@ -24,6 +24,7 @@
         //Read all Tasks from the Database on page reload
         window.addEventListener('load',()=>{
             //fetch('http://localhost:8000/read')
+            //AS heroku won't be requesting from localhost but from it's own given hosted url
             fetch('/read')
             .then(response=>response.json())
             .then(data=>{

@@ -1,0 +1,66 @@
+body{
+    background-color: hsl(0, 0%, 0%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: hsl(120, 100%, 50%);
+}
+header{
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form input,button{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.task-input{
+    padding: 10px 5px;
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(120, 100%, 50%);
+    border: 1px solid hsl(120, 100%, 50%);
+    border-radius: 0%;
+}
+.task-input:focus{
+    outline: none !important;
+    border: 1px solid hsl(120, 100%, 50%);
+}
+.task-input:-webkit-autofill,
+.task-input:-webkit-autofill:hover, 
+.task-input:-webkit-autofill:focus{
+  -webkit-text-fill-color: hsl(120, 100%, 50%);
+  /*i.e. in 5000s the background-color will be default-white and 5000s is pretty long enough time to wait around
+  selecting the autofill only in the website
+  transition: background-color 5000s ease-in-out 0s;*/
+  /*OR, we could use the inset property to color the inside of the input field to the desired bg-color*/
+  box-shadow: 0 0 0 1000px hsl(0, 0%, 0%) inset;
+}
+.submit-btn{
+    padding: 10px 8px;
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(120, 100%, 50%);
+    border: 1px solid hsl(120, 100%, 50%);
+    border-radius: 0%;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.submit-btn:hover{
+    background-color: hsl(120, 100%, 50%);
+    color: hsl(0, 0%, 0%);
+    border: 1px solid hsl(0, 0%, 0%);
+}
+.task-list{
+    width: fit-content;
+    padding: 5px;
+}
+.task-list .list-item{
+    padding: 5px 10px;
+    background-color: hsl(0, 0%, 15%);
+    transition: all 0.4s ease;
+}
+.task-list .list-item:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 20%);
+    text-decoration: line-through;
+}

@@ -23,7 +23,8 @@
     <script>
         //Read all Tasks from the Database on page reload
         window.addEventListener('load',()=>{
-            fetch('http://localhost:8000/read')
+            //fetch('http://localhost:8000/read')
+            fetch('/read')
             .then(response=>response.json())
             .then(data=>{
                 data.taskArray.forEach(item=>{
@@ -36,7 +37,12 @@
         document.querySelector('.submit-btn').addEventListener('click',(event)=>{
             event.preventDefault();
             var task=document.querySelector('.task-input').value;
-            fetch('http://localhost:8000/post', {
+            /*fetch('http://localhost:8000/post', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'taskName='+task
+            })*/
+            fetch('/post', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 body: 'taskName='+task
@@ -52,7 +58,12 @@
         //Delete the clicked/selected task
         function deleteTask(event){
             var taskId=event.target.id;
-            fetch('http://localhost:8000/delete',{
+            /*fetch('http://localhost:8000/delete',{
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'taskId='+taskId
+            })*/
+            fetch('/delete',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 body: 'taskId='+taskId
